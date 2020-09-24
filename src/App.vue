@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TimerList 
+      :timers="timers"
+      @add-timer="addTimer"
+    />
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { v4 as uuidv4 } from 'uuid'
+import TimerList from '@/components/TimerList'
 
 export default {
   name: 'App',
+  data: () => ({
+    timers: [{id: uuidv4(), hours: 0, minutes: 59, seconds: 55}]
+  }),
+  methods: {
+    addTimer() {
+      this.timers.push({
+        id: uuidv4(), hours: 0, minutes: 0, seconds: 0
+      })
+    }
+  },
   components: {
-    HelloWorld
+    TimerList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import './style.css';
 </style>
+
+

@@ -1,0 +1,114 @@
+@font-face {
+    src: url('./assets/fonts/GothamPro.ttf');
+    font-family: "Gotham Pro";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #353638;
+    font-family: "Gotham Pro";
+}
+
+#app {
+    padding: 72px 0;
+}
+
+.timer-list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 225px);    
+    grid-template-rows: 120px;
+    grid-column-gap: 50px;
+    grid-row-gap: 45px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .timer-list {
+        grid-template-columns: repeat(2, 225px);
+    }
+}
+
+@media (max-width: 767px) {
+    .timer-list {
+        grid-template-columns: 225px;
+    }
+}
+
+.timer, .add-timer {
+    background: #696969;
+    color: #9E9E9E;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.timer_numbers {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #9E9E9E;
+    font-size: 22px;
+    line-height: 21px;
+    padding: 20px 0;
+}
+
+.timer-hours, .timer-minutes, .timer-seconds {
+    min-width: 31px;
+}
+
+.timer.active .timer_numbers {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.between-numbers__margin {
+    margin: 0 3px;
+}
+
+.timer-manage {
+    padding: 20px 0;
+}
+
+.timer.active .timer-stop,  .timer.active  .timer-reset {
+    color: #FFFFFF;
+}
+
+.timer-play, .timer-stop, .timer-reset {
+    background: none;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    font-size: 100%;
+    padding: 0;
+    color: #9E9E9E;
+}
+
+.timer-play:hover, .timer-stop:hover, .timer-reset:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.timer-reset__marginLeft {
+    margin-left: 40px;
+}
+
+.add-timer {
+    font-size: 26px;
+    text-align: center;
+    line-height: 120px;
+    vertical-align: middle;
+}
+
+.add-timer:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
