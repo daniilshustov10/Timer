@@ -15,7 +15,7 @@ import TimerList from '@/components/TimerList'
 export default {
   name: 'App',
   data: () => ({
-    timers: [{id: uuidv4(), hours: 0, minutes: 59, seconds: 55}]
+    timers: [{id: uuidv4(), hours: 0, minutes: 0, seconds: 0}]
   }),
   methods: {
     addTimer() {
